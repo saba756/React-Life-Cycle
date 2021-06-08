@@ -5,7 +5,7 @@ export class ChildComponent extends Component {
         super(props)
         this.state = {
           name: 'Constructor Method',
-          didmount: 'from previous state updated in 5 sec',
+          didmount: 'previous state is update in 5 sec',
           data: 'This name will change in 5 sec',
           num:100,
 
@@ -29,16 +29,16 @@ export class ChildComponent extends Component {
       }
 
 
-    //   shouldComponentUpdate(pre) {
-    //       console.log("shouldComponentUpdate called");
-    //       if(this.state.num === 100){
-    //           return true;
-    //       }
-    //       else{
-    //         return false;
-    //       }
-    //     //Change to true for state to update
-    //   }
+      shouldComponentUpdate(pre) {
+          console.log("shouldComponentUpdate called");
+          if(this.state.num === 100){
+              return true;
+          }
+          else{
+            return false;
+          }
+        //Change to true for state to update
+      }
 
 
       getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -47,18 +47,18 @@ export class ChildComponent extends Component {
         return document.getElementById('previous-state').innerHTML = "The previous state was " + prevState.didmount
       }
 
-      componentDidUpdate(prevProps, prevState) {
-        console.log("componentDidUpdate called");
-        if(prevState.didmount !== this.state.didmount) {
-            document.getElementById('statechange').innerHTML = "Yes the state is changed"
-        }
-        document.getElementById('current-state').innerHTML = "The current state is " + this.state.didmount
-      }
+      // componentDidUpdate(prevProps, prevState) {
+      //   console.log("componentDidUpdate called");
+      //   if(prevState.didmount !== this.state.didmount) {
+      //       document.getElementById('statechange').innerHTML = "Yes the state is changed"
+      //   }
+      //   document.getElementById('current-state').innerHTML = "The current state is " + this.state.didmount
+      // }
 
-    //   componentWillUnmount(){
-    //     console.log("componentWillUnmount called");
-    //     alert('This will unmount')
-    // }
+      componentWillUnmount(){
+        console.log("componentWillUnmount called");
+        //alert('This will unmount')
+    }
     render() {
         console.log("render called");
         return (

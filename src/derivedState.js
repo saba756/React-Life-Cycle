@@ -16,10 +16,10 @@ class DerivedState extends Component {
     };
   }
   render() {
-      console.log("render")
+    //console.log("render called", this.setState({currentValue: this.state.currentValue + 1 }))
     return (
     <div>
-    <h1> currentValue  getDerivedStateFromProps:{this.state.currentValue}</h1>
+    <h1> currentValue:</h1>
         </div>
     )}
   }

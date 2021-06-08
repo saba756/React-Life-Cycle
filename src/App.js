@@ -15,7 +15,7 @@ class App extends Component {
       show: true,
 
     }
-    console.log("Constructor called");
+    //console.log("Constructor called props", props);
 }
 render() {
   // this.setState({name: 'sba'});
@@ -23,21 +23,22 @@ render() {
     <div>
      {/* <p> This is a {this.state.name}</p>
      <h1>Get Derived State from props {this.state.derivedState}</h1>
-     <button onClick={() =>{this.setState({derivedState: this.state.derivedState + 1 })} }>Count</button> */}
-     <br></br> 
-     {/* <button onClick={() => {this.setState({show: !this.state.show})}}>Click me to toggle</button> */}
+     <button onClick={() =>{this.setState({derivedState: this.state.derivedState + 1 })} }>Count</button>
+     <br></br>  */}
+     <button onClick={() => {this.setState({show: !this.state.show})}}>Click me to toggle</button>
      <br></br>
      {/* <DerivedState derivedData={this.state.derivedState}/> */}
 
-    {/* {this.state.show ? 
+    {this.state.show ? 
       <ChildComponent 
-       nameFromParent="getDerivedStateFromProps Method"/> : null}  */}
-{/* 
-      <DidMount/> */}
+       nameFromParent="getDerivedStateFromProps Method"/> : null}
+ 
+      {/* <DidMount/> */}
+
     
      {/* <ShouldUpdate/> */}
      
-      <CompDidUpdate/>
+      {/* <CompDidUpdate/> */}
     </div>
   )
 }
